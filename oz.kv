@@ -1,0 +1,94 @@
+#: import C kivy.utils.get_color_from_hex
+
+<Label>:
+	font_size: '18sp'
+
+<TextInput>:
+	font_size: '18sp'
+	color: C('#04D94F')
+
+<RadioButton>:
+	background_normal: 'button_normal.png'
+	background_down: 'button_down.png'
+	border: (3,3,3,3)
+
+<ExamTypeB@RadioButton>:
+	font_size: '18sp'
+	group: 'exam'
+
+<Input@BoxLayout>:
+	label_text: ''
+	Label:
+		color: C('#57F28D')
+		size_hint_x: 30
+		valign: 'middle'
+		halign: 'center'
+		text: root.label_text
+	TextInput:
+		size_hint_x: 70
+		padding: [10, ( self.height - self.line_height ) / 2]
+		color: C('#04D94F')
+		multiline: False
+
+OzRoot:
+<OzRoot>:
+	orientation: 'horizontal'
+	OzMarks
+	#OzPerformance
+
+
+<OzMarks>:
+	size_hint_x: 50
+	orientation: 'vertical'
+	padding: 10
+	spacing: 10
+	BoxLayout:
+		size_hint_y:15
+		spacing: 10
+		ExamTypeB:
+			text: 'K-CET'
+			on_release: root.updateSubmitLayout()
+		ExamTypeB:
+			text: 'JEE-Mains'
+			on_release: root.updateSubmitLayout()
+		ExamTypeB:
+			text: 'Subjective'
+			on_release: root.updateSubmitLayout()
+
+
+<OzPostMarks@BoxLayout>:
+	spacing: 10
+	size_hint_y: 85
+	orientation: 'vertical'
+	Input:
+		label_text: 'Rank'
+	Input:
+		label_text: 'Date'
+	Label:
+		text: '[b]Enter Your Marks[/b]'
+		color: C('#04D94F')
+		font_size: '24sp'
+		markup: True
+	Input:
+		label_text: 'Mathematics'
+	Input:
+		label_text: 'Physics'
+	Input:
+		label_text: 'Chemistry'
+
+	Button:
+		background_normal: 'button_normal.png'
+		background_down: 'button_down.png'
+		text: 'Submit'
+
+
+<OzPerformance>:
+
+
+<Graph@BoxLayout>:
+	#Graph plotted using mathplotlib
+
+
+<Table@BoxLayout>:
+	#Table
+

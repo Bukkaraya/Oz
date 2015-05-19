@@ -1,0 +1,32 @@
+<Label>:
+	font_size: '14sp'
+<TextInput>:
+	font_size: '14sp'
+	color: C('#04D94F')
+
+<LabelInupt@BoxLayout>:
+	Label:
+		halign: 'center'
+		valign: 'middle'
+	TextInput:
+		valign: 'middle'
+		halign: 'center'
+
+	LabelInupt:
+		Label:
+			text: 'Rank'
+	LabelInupt:
+		Label:
+			text: 'Date'
+	Label:
+		text: 'Marks'
+		color: C('#04D94F')
+	LabelInput: 
+		Label:
+			text: 'Mathematics'
+	LabelInput:
+		Label:
+			text: 'Physics'
+	LabelInput:
+		Label:
+			text: 'Chemistry'
